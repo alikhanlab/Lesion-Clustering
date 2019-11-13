@@ -45,4 +45,10 @@ def vertex_edge_face(xyz_loc, neighbor_loc):
     
     return
 
-vertex_edge_face(xyz_loc, neighbor_loc)
+xyz_loc = list(np.load('xyz_loc.npy'))
+neighbors_loc = list(np.load('neighbors_loc.npy'))
+xyz_loc = ['../'+x for x in xyz_loc]
+neighbors_loc = ['../'+x for x in neighbors_loc]
+
+for count, element in enumerate(xyz_loc):
+    vertex_edge_face(element, neighbors_loc[count])
